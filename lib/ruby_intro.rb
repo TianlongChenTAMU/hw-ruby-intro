@@ -1,20 +1,18 @@
-# # When done, submit this entire file to the autograder.
-
 # Part 1
 
 def sum arr
-  return arr.inject(0){|sum, x| sum + x }
+  return arr.inject(0){|sum, x| sum + x}
 end
 
 def max_2_sum arr
-  sort_arr = arr.sort
-  n = sort_arr.length
-  if n == 0
-    return 0
-  elsif n == 1
+  sarr = arr.sort
+  num = sarr.length
+  if num == 1
     return arr[0]
+  elsif num == 0
+    return 0
   else  
-  	return sort_arr[n-1] + sort_arr[n-2]
+  	return sarr[num-1] + sarr[num-2]
   end  
 end
 
@@ -22,22 +20,22 @@ def sum_to_n? arr, n
   if arr.empty? && n.zero?
     return false
   else  
-    arr.combination(2).any? {|a, b| a + b == n }
+    arr.combination(2).any? {|a, b| a + b == n}
   end  
 end
 
 # Part 2
 
 def hello(name)
-  a = "Hello, #{name}"
-  return a
+  howdy = "Hello, #{name}"
+  return howdy
 end
 
 def starts_with_consonant? s
-  ini = s[0]
-  if ini == nil
+  iniarr = s[0]
+  if iniarr == nil
     return false
-  elsif ini.downcase =~ /[b-df-hj-np-tv-z]/    
+  elsif iniarr.downcase =~ /[b-df-hj-np-tv-z]/    
     return true
   else
     return false
